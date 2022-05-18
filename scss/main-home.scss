@@ -1,0 +1,197 @@
+.about-features-classes {
+    display: grid;
+    grid-template-areas: 
+    'about'
+    'classes'
+    'features';
+    background-color: black;
+}
+
+#about-us {
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    padding: 40px 0px;
+    color: #fffcf2;
+    grid-area: about;
+}
+
+.about-us-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-us-title {
+    text-align: center;
+    padding-bottom: 24px;
+
+    h3 {
+        font-size: 25px;
+        font-weight: bold;
+        color: white;
+    }
+}
+
+.about-us-subtitle {
+    text-align: center;
+    font-size: 20px;
+    padding: 0px 24px;
+
+    span {
+        font-weight: 800;
+        color: $color-primary;
+    }
+}
+
+#features {
+    grid-area: features;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 25px;
+}
+
+.features-title {
+    color: white;
+    text-align: center;
+
+    h3 {
+        font-size: 25px;
+        font-weight: bold;
+    }
+}
+
+#classes-mobile {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: classes;
+    padding: 0px 20px 40px 20px;
+}
+
+.classes-mobile-title {
+    color: white;
+
+    h3 {
+        font-size: 25px;
+        font-weight: bold;
+    }
+}
+
+.classes-mobile-link {
+    text-align: center;
+
+    p {
+        margin-bottom: 0px;
+        color: white;
+        font-size: 20px;
+        padding-bottom: 20px;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        border-bottom: white 2px solid;  
+        &:hover {
+            border-bottom: $color-primary 1px solid;
+            color: $color-primary;
+        }
+    }
+}
+
+.carousel-item {
+    width: 95%;
+
+    img {
+        width: 100%;
+        margin: 0px 10px;
+    }
+}
+
+@media screen and (min-width:700px) {
+    .about-features-classes {
+        grid-template-areas: 
+        'about classes classes'
+        'features features features';
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .about-features-classes {
+        grid-template-areas: 
+        'about about about'
+        'features features features';
+    }
+
+    #classes-mobile {
+        display: none;
+    }
+}
+
+#memberships {
+    background-color: black;
+    padding-top: 0px;
+
+    h4 {
+        border-bottom: solid 2px $color-primary;
+        text-align: center;
+    }
+
+    h4, li {
+        padding: 10px 0px;
+        color: white;
+    }
+}
+
+@mixin fontstyle {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.memberships-title {
+
+    h3 {
+        @include fontstyle;
+        text-align: center;
+    }
+
+    p {
+        font-size: 20px;
+        padding-top: 20px;
+        color: white;
+        text-align: center;
+    }
+}
+
+.memberships-basic {
+    ul {
+        list-style-type: none;
+        text-align: center;
+    }
+
+    a {
+        border: solid #eb5e28;
+        border-radius: 8px;
+        font-size: 20px;
+        background: $color-primary;
+        font-weight: bolder;
+        color: white;
+        text-decoration: none;
+        padding: 5px;
+
+        &:hover {
+            font-size: larger;
+        }
+    }
+
+}
+
+.memberships-full {
+    @extend .memberships-basic;
+}
